@@ -8,7 +8,10 @@ public class Lab001 {
         //Just following the procedures like robots
 
         //Object-Oriented Programming -- more close to the real life
+        //It is a methodology/paradiom using Classes and Objects
         //OOPs is not a programming lang. but set of concepts, certain rules
+        //Class - user defined data type
+        //Object -- close to real life
 
         /*
         Creating a new Planet with AHumans --
@@ -39,5 +42,12 @@ public class Lab001 {
 
          */
         //Refer the notes for further description
+
+        //Execution --
+        /*
+        Area is class Loader
+        Heap Area - Where Objects are created
+        SCP -- very small area
+         */
     }
 }
