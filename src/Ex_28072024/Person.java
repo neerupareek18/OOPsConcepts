@@ -1,4 +1,4 @@
-package PersonClass_Protected;
+package Ex_28072024;
 //This is just a blue print
 public class Person {
     //Attributes
@@ -9,6 +9,7 @@ public class Person {
     //Behaviour
 
     public void walk(){
+        System.out.println("I am in same Package of runner class");
 
     }
     public void talk(){

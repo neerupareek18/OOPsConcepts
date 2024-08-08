@@ -1,6 +1,7 @@
-package LiveClassPrograms_28072024;
+package Ex_28072024;
 
-import PersonClass_Protected.Person;
+import PersonClass_OtherFolder.Person; //If Person is present in same and other package -- import statement will decide, which class will be called
+//We can't import same class from two package -- there will be ambiguity
 
 public class Runner_Person {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package LiveClassPrograms_28072024;
+package Ex_28072024;
 //public -- anyone can use it
 //Car -- identifier
 public class Car {

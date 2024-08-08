@@ -1,4 +1,4 @@
-package LiveClassPrograms_28072024;
+package Ex_28072024;
 
 public class Lab001 {
     public static void main(String[] args) {
