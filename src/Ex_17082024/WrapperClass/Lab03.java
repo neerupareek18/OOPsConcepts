@@ -10,7 +10,8 @@ public class Lab03 {
         System.out.println(a+1);
         System.out.println(a1+1);
 
-        System.out.println(Integer.parseInt(num));
+        System.out.println(Integer.parseInt(num)); //Converts String to int
+        System.out.println(Integer.valueOf(num)); //Converts String to Wrapper Class Integer
 
         //Use of this concept -- when String to int, Integer
         //Primitive to wrapper or reverse

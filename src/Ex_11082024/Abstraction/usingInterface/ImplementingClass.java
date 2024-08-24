@@ -10,6 +10,13 @@ public class ImplementingClass implements Car{
     public void stop() {
 
     }
+
+    public static void main(String[] args) {
+        Vehicle v = new ImplementingClass();
+        v.d();
+        Vehicle.d1();
+
+    }
 }
 
 interface I{}

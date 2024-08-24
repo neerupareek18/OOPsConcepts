@@ -1,6 +1,4 @@
-package Ex_17082024.ExceptionHandling;
-
-import java.util.IllegalFormatConversionException;
+package Ex_18082024.ExceptionHandling.try_catch;
 
 public class Lab01 {
     //Exceptions -- which occurs during the execution which distrupts the program
@@ -30,7 +28,9 @@ public class Lab01 {
         catch(ArrayIndexOutOfBoundsException| ArithmeticException|NumberFormatException e){
             System.out.println(e.getMessage());
             e.printStackTrace(); //printStackTrace will always show at the end in console
-        }
+        } //-- Finally can be written without catch block
+        //Finally can be used to closing of the connections - file, scanner, etc.
+        // But in checked Exceptions, catch should be there
         System.out.println("End of the program");
         //If the Exception is handled, the rest of the code will be executed, else the program will be terminated
     }

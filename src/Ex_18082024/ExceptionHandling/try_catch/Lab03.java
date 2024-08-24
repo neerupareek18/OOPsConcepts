@@ -1,6 +1,4 @@
-package Ex_17082024.ExceptionHandling;
-
-import java.io.Serializable;
+package Ex_18082024.ExceptionHandling.try_catch;
 
 public class Lab03 {
     public static void main(String[] args) {
