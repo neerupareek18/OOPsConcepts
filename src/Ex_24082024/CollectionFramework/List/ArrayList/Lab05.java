@@ -1,5 +1,6 @@
 package Ex_24082024.CollectionFramework.List.ArrayList;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Lab05 {
@@ -10,5 +11,8 @@ public class Lab05 {
 
         l.add("Apple"); //this will give the runtime error as add in interface is the incomplete method, no one has completed it
         System.out.println(l);
+
+        ArrayList al = new ArrayList(l.subList(0,3)); //end index is excluded
+        System.out.println(al);
     }
 }
