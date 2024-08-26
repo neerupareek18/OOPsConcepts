@@ -1,10 +1,8 @@
-package Ex_24082024.CollectionFramework.List.Vector;
+package Ex_24082024.CollectionFramework.List.Vector_Stack;
 
 import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.Vector;
-import java.util.List;
-import java.util.function.DoubleToIntFunction;
 
 public class Lab01 {
     public static void main(String[] args) {
@@ -30,5 +28,11 @@ public class Lab01 {
 
 
 
+    }
+
+    public static class Lab02 {
+        public static void main(String[] args) {
+
+        }
     }
 }
