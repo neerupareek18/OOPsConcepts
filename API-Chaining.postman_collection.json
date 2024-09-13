@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "87d29474-bad1-48e1-a447-3928e54454cb",
+		"name": "API-Chaining",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37894579"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var random = Math.random().toString().substring(2,5);\r",
+							"var name = random+\" Ramakrishna\";\r",
+							"var email = \"Ram\"+random+\"@yopmail.com\"\r",
+							"\r",
+							"pm.variables.set(\"name1\", name)\r",
+							"pm.variables.set(\"email1\",email)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = pm.response.json();\r",
+							"var id = res.id;\r",
+							"pm.collectionVariables.set(\"id1\",id)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"{{name1}}\", \"gender\":\"male\", \"email\":\"{{email1}}\", \"status\":\"active\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gorest.co.in/public/v2/users"
+			},
+			"response": []
+		},
+		{
+			"name": "GetUser",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer bdea59cfbbb8c71c9f783ed2a0366b6db4616fd08bbcdcc222e4163b1e9e30a4"
+					}
+				],
+				"url": "https://gorest.co.in/public/v2/users",
+				"description": "Generated from cURL: curl -i -H \"Accept:application/json\" -H \"Content-Type:application/json\" -H \"Authorization: Bearer bdea59cfbbb8c71c9f783ed2a0366b6db4616fd08bbcdcc222e4163b1e9e30a4\" -XGET \"https://gorest.co.in/public/v2/users\""
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var random = Math.random().toString().substring(2,5);\r",
+							"var name = random+\" Kirk\";\r",
+							"var email = \"Laudan\"+random+\"@yopmail.com\"\r",
+							"\r",
+							"pm.variables.set(\"name1\", name)\r",
+							"pm.variables.set(\"email1\",email)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer bdea59cfbbb8c71c9f783ed2a0366b6db4616fd08bbcdcc222e4163b1e9e30a4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"{{name1}}\", \"email\":\"{{email1}}\", \"status\":\"active\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://gorest.co.in/public/v2/users/{{id1}}",
+				"description": "Generated from cURL: curl -i -H \"Accept:application/json\" -H \"Content-Type:application/json\" -H \"Authorization: Bearer bdea59cfbbb8c71c9f783ed2a0366b6db4616fd08bbcdcc222e4163b1e9e30a4\" -XPATCH \"https://gorest.co.in/public/v2/users/6940709\" -d '{\"name\":\"Allasani Peddana\", \"email\":\"allasani.peddana@15ce.com\", \"status\":\"active\"}' "
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validate the status code of the response\",()=>{\r",
+							"    pm.response.to.have.status(\"204\")\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer bdea59cfbbb8c71c9f783ed2a0366b6db4616fd08bbcdcc222e4163b1e9e30a4"
+					}
+				],
+				"url": "https://gorest.co.in/public/v2/users/{{id1}}",
+				"description": "Generated from cURL: curl -i -H \"Accept:application/json\" -H \"Content-Type:application/json\" -H \"Authorization: Bearer bdea59cfbbb8c71c9f783ed2a0366b6db4616fd08bbcdcc222e4163b1e9e30a4\" -XDELETE \"https://gorest.co.in/public/v2/users/6940709\""
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "bdea59cfbbb8c71c9f783ed2a0366b6db4616fd08bbcdcc222e4163b1e9e30a4"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Token",
+			"value": "bdea59cfbbb8c71c9f783ed2a0366b6db4616fd08bbcdcc222e4163b1e9e30a4",
+			"type": "string"
+		},
+		{
+			"key": "id1",
+			"value": ""
+		}
+	]
+}
