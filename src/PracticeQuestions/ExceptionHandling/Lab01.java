@@ -1,0 +1,25 @@
+package PracticeQuestions.ExceptionHandling;
+
+public class Lab01 {
+
+    public static void main(String[] args) {
+        try{
+            badMethods();
+            System.out.println("E");
+        }
+        catch (Exception e){
+            System.out.println("B");
+        }
+        finally{
+            System.out.println("C");
+        }
+        System.out.println("D");
+    }
+    
+    public static void badMethods(){
+        System.out.println("A");
+        throw new RuntimeException();
+
+    }
+    
+}
